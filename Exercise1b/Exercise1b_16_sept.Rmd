@@ -1,0 +1,42 @@
+---
+title: "Exercise 1b"
+author: "Meret Mosimann"
+date: "16 September 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Exercise Description
+
+Create an HTML document that samples 100 values from a log-normal
+distribution (say, mu=1, sigma=.25); create a histogram of the
+distribution and the distribution on the log scale; report the mean and
+variance of the sample in line in the text.
+
+
+### Generating data
+```{r}
+data <- rlnorm(100, mean = 1, sd = .25)
+data <- as.data.frame(data)
+```
+
+
+### Plotting
+```{r}
+ggplot(data, aes(x=data)) + 
+  geom_histogram(bins=12) +  
+  scale_x_log10() +
+  xlab('Values shown on log10 scale') +
+  ylab('Count') +
+  ggtitle('Randomly sampled data from log normal distribution')
+
+```
+
+## Reporting mean and variance
+
+The theoretical mean ought to be 1. The mean calculated from the data is `r mean(data$data)`.\
+The expected variance is \(0.25^2\), which is 0.0625. The variance from the randomly sampled data is `r var(data$data)`.
