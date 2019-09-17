@@ -1,7 +1,7 @@
 # MMosimann
 Milotic
 
-## Repository made for Exercises from the course **Statistical Analysis of High-Throughput Genomic and Transcriptomic Data** 
+## Repository made for exercises from the course **Statistical Analysis of High-Throughput Genomic and Transcriptomic Data** 
 
 
 ### Adding and image...
